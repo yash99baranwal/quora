@@ -8,8 +8,8 @@ class Question(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     followers = models.ManyToManyField(User, related_name="questions_followed", blank=True)
 
-    def number_of_likes(self):
-        return self.likes.count()
+    def number_of_followers(self):
+        return self.followers.count()
 
     def __str__(self):
         return (
